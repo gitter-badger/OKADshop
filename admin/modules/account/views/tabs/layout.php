@@ -1,5 +1,9 @@
 <?php uasort($tabs, "sort_tabs"); ?>
+<<<<<<< HEAD
 <div id="<?=$location;?>" class="os-tab-container <?=($args['ajax']) ? 'ajaxTab' : ''; ?>">
+=======
+<div id="<?=$location;?>" class="os-tab-container <?=($args['ajax']) ? 'ajaxTab' : ''; ?> mt-50">
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	<div class="container">
 		<div class="row">
 

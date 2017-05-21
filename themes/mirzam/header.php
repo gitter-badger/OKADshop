@@ -13,9 +13,17 @@
     <?= os_head(); ?>
 </head>
 <body>
+<<<<<<< HEAD
     <section id="top-banner">
         <?php get_section('top_banner'); ?>
     </section>
+=======
+
+    <section id="top-banner">
+        <?php get_section('top_banner'); ?>
+    </section>
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
     <section id="top-nav">
       <div class="container">
         <div class="row">
@@ -30,12 +38,20 @@
           </div>
       </div>
     </section>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
     <section id="header_top">
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-sm-4 mb-xs-20">
             <div id="logo">
+<<<<<<< HEAD
               <a href="<?=get_home_url();?>"><img src="<?=get_logo();?>" alt="logo" height="46" /></a>
+=======
+              <a href="<?=get_home_url();?>"><img src="<?=get_logo();?>"  alt="logo" /></a>
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
             </div>
           </div>
           <div class="col-md-5 col-sm-8">
@@ -65,7 +81,11 @@
     <section id="main-nav">
         <div class="container">
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-xs-12 col-sm-8">
+=======
+                <div class="col-xs-12 col-sm-6">
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
                     <nav class="navbar main-menu" id="main_nav">
                         <div class="container">
                           <div class="navbar-header">
@@ -82,7 +102,11 @@
                         </div><!-- /.container -->
                     </nav>
                 </div>
+<<<<<<< HEAD
                 <div class="col-xs-12 col-sm-4">
+=======
+                <div class="col-xs-12 col-sm-6">
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
                     <?php get_section('contact_info'); ?>
                     <ul class="nav pull-right" id="client-info">
                         <li><a href="<?= generate_url('contact') ?>"><i class="fa fa-envelope"></i> <?= get_shop("email"); ?></a></li>

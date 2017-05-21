@@ -48,10 +48,16 @@ class OrderController extends FrontController
             $id_state = 0;
             $payment_method = 'Free';
         }
+<<<<<<< HEAD
                     
         //prepare order
         $order_data = array(
             'id_customer' => get_user('id'),
+=======
+        //prepare order
+        $order_data = array(
+            'id_customer' => Session::get('user')->id,
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
             'id_state' => $id_state, 
             'id_carrier' => $cart->id_carrier, 
             'payment_method' => $payment_method, 
@@ -151,7 +157,12 @@ class OrderController extends FrontController
      */
     public static function getOrderState($template){
         $db = Database::getInstance();
+<<<<<<< HEAD
         return $db->prepare("SELECT * FROM {$db->prefix}order_states WHERE template=?", [$template], true);
+=======
+        $result = $db->prepare("SELECT * FROM {$db->prefix}order_states WHERE template=?", [$template], true);
+        return $result;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
     }
 
 

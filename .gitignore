@@ -7,5 +7,9 @@ modules/watermark
 modules/social-auth
 themes/mirzam/assets/_dev/sass/.sass-cache
 /uploads
+<<<<<<< HEAD
 logs/access.log
 logs/access.log
+=======
+/logs
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490

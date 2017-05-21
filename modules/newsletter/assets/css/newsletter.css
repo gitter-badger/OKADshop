@@ -62,8 +62,13 @@
 
 .newsletter-popup .nl-popup-form .button:hover,
 .newsletter-popup .nl-popup-form .button:focus{
+<<<<<<< HEAD
     border-color: gray;
     background: gray;
+=======
+    background-color: #7e883a;
+    border-color: #7e883a;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
     outline: none;
 }
 
@@ -115,8 +120,13 @@
     line-height: 41px;
     border: none;
     border-radius: 0px;
+<<<<<<< HEAD
     background-color: #f0f0e9;
     color: #dcdcda;
+=======
+    background-color: #fe980f;
+    color: #fff;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 
 .newsletter_block button:focus{

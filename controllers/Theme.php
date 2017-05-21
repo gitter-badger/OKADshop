@@ -60,7 +60,11 @@ class Theme extends Controller
 
 
 	/**
+<<<<<<< HEAD
      * GET ACTIVE THEME URI
+=======
+     * GET ACTIVE THEME
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
      * @return name string
      */
 	public static function getThemeURI(){

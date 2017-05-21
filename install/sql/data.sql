@@ -149,9 +149,16 @@ INSERT INTO `%%meta_value` (`name`, `value`) VALUES
 --
 
 INSERT INTO `%%payment_methodes` (`id`, `value`, `description`, `image`) VALUES
+<<<<<<< HEAD
 (1, 'Bank wire', 'Pay with bank wire', 'modules/bankwire/assets/images/bankwire.jpg'),
 (3, 'PayPal', 'Pay with PayPal', 'modules/paypalexpress/assets/images/paypal.png'),
 (4, 'Western Union', 'Pay with Western Union', 'modules/westernunion/assets/images/western.png');
+=======
+(1, 'Virement bancaire', 'Payer par virement bancaire', 'modules/bankwire/assets/images/bankwire.jpg'),
+(2, 'Mandat Postal', 'Payer par Mandat Postal', 'modules/os-mandatpostal/assets/images/mandatpostal.png'),
+(3, 'PayPal', 'Payer par PayPal', 'modules/paypalexpress/assets/images/paypal.png'),
+(4, 'Western Union', 'Payer par Western Union', 'modules/westernunion/assets/images/western.png');
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 
 
 --
@@ -362,6 +369,7 @@ INSERT INTO `%%product_images` (`id`, `id_product`, `name`, `position`, `futured
 --
 
 INSERT INTO `%%shop_activity` (`id`, `name`) VALUES
+<<<<<<< HEAD
 (1, 'Food and gastronomy'),
 (2, 'Animals'),
 (3, 'Baby items'),
@@ -383,6 +391,29 @@ INSERT INTO `%%shop_activity` (`id`, `name`) VALUES
 (19, 'Travel and Tourism'),
 (20, 'home appliance'),
 (21, 'Other Activities ...');
+=======
+(1, 'Alimentation et gastronomie'),
+(2, 'Animaux'),
+(3, 'Articles pour bébé'),
+(4, 'Arts et culture'),
+(5, 'Auto et moto'),
+(6, 'Bijouterie'),
+(7, 'Chaussures et accessoires'),
+(8, 'Fleurs, cadeaux et artisanat'),
+(9, 'Hifi, photo et vidéo'),
+(10, 'Informatique et logiciels'),
+(11, 'Lingerie et Adulte'),
+(12, 'Maison et jardin'),
+(13, 'Mode et accessoires'),
+(14, 'Santé et beauté'),
+(15, 'Services'),
+(16, 'Sports et loisirs'),
+(17, 'Téléchargement'),
+(18, 'Télé©phonie et communication'),
+(19, 'Voyage et tourisme'),
+(20, 'électromÃ©nager'),
+(21, 'Autre activité ...');
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 
 
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <section id="trending">
+=======
+<section id="trending" class="visible-md visible-lg">
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">

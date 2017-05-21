@@ -31,6 +31,10 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+<<<<<<< HEAD
+=======
+	height: 45px; /* Set the fixed height of the footer here */
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
     background-color: #b5b5b5;
     p {
       padding: 25px 0px;
@@ -40,5 +44,14 @@ footer {
       text-align: left;
       line-height: 0px;
     }
+<<<<<<< HEAD
+=======
+    a {
+      color: red;
+      &:hover {
+        color: #fdae44;
+      }
+    }
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
   }
 }

@@ -1277,6 +1277,7 @@ msgstr "The gathered information is subject to a data and statistical processing
 
 #: index.php:272
 msgid "Configurez la connexion à votre base de données en remplissant les champs suivants."
+<<<<<<< HEAD
 msgstr "Configure the connection to your database by filling out the fields below."
 
 #: index.php:275
@@ -1302,6 +1303,33 @@ msgstr "Table prefix"
 #: index.php:311
 msgid "Tester la connexion à la base de données"
 msgstr "Test the connection to the database"
+=======
+msgstr "Database configuration"
+
+#: index.php:275
+msgid "Adresse du serveur de la base"
+msgstr "Server name"
+
+#: index.php:282
+msgid "Nom de la base"
+msgstr "Database name"
+
+#: index.php:289
+msgid "Identifiant de la base"
+msgstr "Database user "
+
+#: index.php:296
+msgid "Mot de passe de la base"
+msgstr "Database password"
+
+#: index.php:303
+msgid "Préfixe des tables"
+msgstr "Tables prefix"
+
+#: index.php:311
+msgid "Tester la connexion à la base de données"
+msgstr "Test database connection"
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 
 #: index.php:325
 msgid "Allez vers la page d'acceuil."

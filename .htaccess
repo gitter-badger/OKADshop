@@ -1,13 +1,33 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
+<<<<<<< HEAD
 AddHandler application/x-httpd-php56 .php
+=======
+
+#www to non www only for online store
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+AddHandler application/x-httpd-php56 .php
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 #Ignore rules if folder exists
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule .* - [L]
+<<<<<<< HEAD
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+=======
+
+
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 # lang supplied in query string
 # with language ([a-zA-Z0-9_-]+)
 RewriteRule ^([a-z]{2})?$ index.php?lang=$1 [L]
@@ -16,10 +36,23 @@ RewriteRule ^([a-z]{2})/([^/\.]+)/([^/\.]+)?$ index.php?lang=$1&Module=$2&ID=$3 
 RewriteRule ^([a-z]{2})/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?lang=$1&Module=$2&ID=$3&ID2=$4 [L]
 RewriteRule ^([a-z]{2})/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?lang=$1&Module=$2&ID=$3&ID2=$4&ID3=$5 [L]
 RewriteRule ^([a-z]{2})/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?lang=$1&Module=$2&ID=$3&ID2=$4&ID3=$5&ID4=$6 [L]
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 # original, without language
 RewriteRule ^([^/\.]+)?$ index.php?Module=$1 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)?$ index.php?Module=$1&ID=$2 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?Module=$1&ID=$2&ID2=$3 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?Module=$1&ID=$2&ID2=$3&ID3=$4 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ index.php?Module=$1&ID=$2&ID2=$3&ID3=$4&ID4=$5 [L]
+<<<<<<< HEAD
 </IfModule>
+=======
+
+</IfModule>
+
+
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490

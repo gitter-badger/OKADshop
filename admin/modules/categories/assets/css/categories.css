@@ -173,6 +173,7 @@
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+<<<<<<< HEAD
 	.mcd-menu { 
 		/*width: 50px;*/
 	}
@@ -180,6 +181,15 @@
 		position: relative;
 		padding: 12px 16px;
 		/*height:20px;*/
+=======
+/*	.mcd-menu { 
+		width: 50px;
+	}*/
+	.mcd-menu li a { 
+		position: relative;
+		padding: 12px 16px;
+/*		height:20px;*/
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	}
 	
 	.mcd-menu li > ul {
@@ -232,7 +242,11 @@
 	.mcd-menu li a { 
 		position: relative;
 		padding: 12px 16px;
+<<<<<<< HEAD
 		/*height:20px;*/
+=======
+/*		height:20px;*/
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	}
 	
 	.mcd-menu li > ul {

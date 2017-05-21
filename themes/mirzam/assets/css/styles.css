@@ -84,8 +84,13 @@ table td{
 }
 
 .btn:hover{
+<<<<<<< HEAD
 	background-color: #fe980f !important;
     color: #fff !important;
+=======
+    background-color: #fff !important;
+    color: #fdae44 !important;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 
 .btn-large{
@@ -170,7 +175,11 @@ i:focus{
     border: none;
 	color: #000;
     font-size: 14px;
+<<<<<<< HEAD
     border: 1px solid #f0f0e9;
+=======
+    border: 3px solid #f0f0e9;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 
 .osForm .form-control:not(textarea){
@@ -180,7 +189,11 @@ i:focus{
 .osForm input:focus{
 	outline: 0px;
 	box-shadow: none !important;
+<<<<<<< HEAD
 	border: 1px solid #f0f0e9 !important;
+=======
+	border: 3px solid #f0f0e9 !important;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 
 input.gray, select.gray, textarea.gray{
@@ -304,7 +317,11 @@ input.gray, select.gray, textarea.gray{
 	#header_top .nav, #main_nav .nav {
 		display: table;
 	    margin: 0 auto;
+<<<<<<< HEAD
 	    float: none !important;
+=======
+	    /*float: none !important;*/
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	}
 
 	    

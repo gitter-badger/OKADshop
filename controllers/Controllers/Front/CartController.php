@@ -134,6 +134,7 @@ class CartController extends FrontController
 
         if( isset($cart->items) ){
             foreach ($cart->items as $id_product => $item) {
+<<<<<<< HEAD
                 if($id_product > 0)
                 {
                     //push id_product to ids_products array
@@ -178,6 +179,48 @@ class CartController extends FrontController
                         }
                     }
                 }   
+=======
+                //push id_product to ids_products array
+                array_push($ids_products, $id_product);
+
+                $product_data = new \stdClass;
+                if( isset($item['qty']) ){
+                    //get translated product data
+                    $data = $product->getProduct($id_product);
+
+                    //prepare data
+                    $product_data->id_product = $data->id;
+                    $product_data->id_dec = 0;
+                    $product_data->name = $data->name;
+                    $product_data->price = $data->sell_price;
+
+                    $items_count += (int) $item['qty'];
+                    $total_products += (int) $item['qty'] * $product_data->price;
+                    $total_discount += (int) $item['qty'] * $data->discount;
+
+                    $product_data->stock = $data->quantity;
+                    $product_data->qty = (int) $item['qty'];
+                    $product_data->min_quantity = (int) $data->min_quantity;
+                    $product_data->cover = $data->cover;
+                    $product_data->attrs = [];
+                    $product_data->link = $data->link;
+
+                    $results['items'][] = $product_data;
+
+                } elseif( !empty($item) ) {
+                    foreach ($item as $id_combination => $qty) {
+                        $data = $product->getCombinationByID($id_product, $id_combination);
+                        
+                        $items_count += (int) $qty;
+                        $total_products += (int) $qty * $data->price;
+                        $total_discount += (int) $qty * $data->discount;
+
+                        $data->qty = (int) $qty;
+
+                        $results['items'][] = $data;
+                    }
+                }        
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
             }
         }
 

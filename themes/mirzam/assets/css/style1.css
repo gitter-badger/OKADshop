@@ -87,7 +87,11 @@ input{
 	padding-left: 0;
 }
 #main_nav #main_menu a{
+<<<<<<< HEAD
 	padding: 20px 64px;
+=======
+	/*padding: 20px 64px;*/
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 #main_nav #main_menu a:hover{
 	color: #fe980f;
@@ -146,7 +150,10 @@ input{
 
 #home_slider {
 	margin-top: 0;
+<<<<<<< HEAD
 	float:left;
+=======
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 }
 #home_slider .carousel-control.right,#home_slider .carousel-control.left{
 	background: none;

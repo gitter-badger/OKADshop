@@ -9,6 +9,12 @@
 	padding: 15px 5px;
 }
 
+<<<<<<< HEAD
+=======
+#account.os-tab-container{
+	background: #7e883a;
+}
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 
 #account #os-tabs ul{
 	border-bottom: none; 
@@ -23,8 +29,13 @@
 #account #os-tabs li.active a, 
 #account #os-tabs a:focus, 
 #account #os-tabs a:hover{
+<<<<<<< HEAD
     background-color: #848484;
     border-color: #b3b3b3;
+=======
+	background-color: #1f1f1f;
+	border-color: #1f1f1f;
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	border-radius: 0px;
 	text-decoration: none;
 }

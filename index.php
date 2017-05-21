@@ -1,18 +1,36 @@
+<<<<<<< HEAD
 <?php
 //call config files
 require_once 'config/bootstrap.php';
+=======
+<?php require_once 'config/bootstrap.php';
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 if( !defined('_LIVE_SITE_') ){
 	error_reporting(E_ALL);
 	ini_set("display_errors", true);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 use Core\Module;
 use Core\Image;
 use Core\Theme;
 use Core\Controllers\Controller;
 use Core\Controllers\Front\BlogController;
 use Core\Controllers\Front\CmsController;
+<<<<<<< HEAD
 //display module page if exist
 Module::PageRender();
+=======
+
+
+//display module page if exist
+Module::PageRender();
+
+ 
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 	$Module = $_GET['Module'];
 	switch ($Module) {
@@ -21,18 +39,49 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 			$data = array();
 			$res = explode('-', $_GET['ID'])[0];
 			$cms_category = $CmsController->getCmsCat($res);
+<<<<<<< HEAD
 			if ($cms_category) {
+=======
+
+			if ($cms_category) {
+
+
+				// os_initialize_meta('meta_title',$cms_category->meta_title);
+	 		// 	os_initialize_meta('meta_description',$cms_category->meta_description);
+	 		// 	os_initialize_meta('meta_keywords',$cms_category->meta_keywords);
+
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 	 			//seo metatags
 				if( function_exists('add_meta') ){
 					set_meta_title($cms_category->meta_title);
 					set_meta_description(strip_tags($cms_category->meta_description));
 					set_meta_keywords($cms_category->meta_keywords);
 				}
+<<<<<<< HEAD
 				$data['cms_category'] = $cms_category;
 				$result = $CmsController->getCmsByCat($cms_category->id);
 				$data['cms_category'] = $cms_category;
 				$data['cms_list'] = $result->cms_list;
 				$data['paginator'] = $result->paginator;
+=======
+
+
+				$data['cms_category'] = $cms_category;
+
+
+				$result = $CmsController->getCmsByCat($cms_category->id);
+
+				$data['cms_category'] = $cms_category;
+				$data['cms_list'] = $result->cms_list;
+				$data['paginator'] = $result->paginator;
+				//$data['blog_style'] = $BlogControllers->getBlogStyle();
+
+				 
+
+				
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 				//get cms template
 				Theme::getTemplate('cms-category', $data);
 			}else{
@@ -43,11 +92,32 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 		case 'cms': 
 			$CmsController = new CmsController();
 			$data = array();
+<<<<<<< HEAD
 			$id_cms = explode('-', $_GET['ID'])[0];
 			$cms = $CmsController->getCms($id_cms);
 			if ($cms) {
 				$cms->cover = 'files/cms/cover/'. $cms->cover_cms ;
 	 			$cms->content = html_entity_decode($cms->content);
+=======
+
+			$id_cms = explode('-', $_GET['ID'])[0];
+			$cms = $CmsController->getCms($id_cms);
+			if ($cms) {
+				
+				$cms->cover = 'files/cms/cover/'. $cms->cover_cms ;
+	 			$cms->content = html_entity_decode($cms->content);
+
+	 			/*os_initialize_meta('meta_title',$cms->meta_title);
+	 			os_initialize_meta('meta_description',$cms->meta_description);
+	 			os_initialize_meta('meta_keywords',$cms->meta_keywords);
+	 			os_initialize_ogdata(array(
+					"url" => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", 
+					"title" => $cms->meta_title, 
+					"description" => $cms->meta_description, 
+					"image" => $cms->cover
+				));*/
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 				//seo metatags
 				if( function_exists('add_meta') ){
 					set_meta_title($cms->meta_title);
@@ -58,6 +128,10 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 						add_meta('og:image', $image, 'property');
 					}
 				}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 				//get cms template
 	 			$data['cms'] = $cms;
 				Theme::getTemplate('cms', $data);
@@ -65,6 +139,10 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 				//redirect to 404 page
 				Controller::notFound();
 			}
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 			break;
 		case 'blog':
 		case 'blog-category': 
@@ -78,22 +156,45 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 			if ($id_category) {
 				$blog_category = $BlogControllers->getBlogCat($id_category);
 				if ($blog_category) {
+<<<<<<< HEAD
+=======
+					// os_initialize_meta('meta_title',$blog_category->meta_title);
+		 		// 	os_initialize_meta('meta_description',$blog_category->meta_description);
+		 		// 	os_initialize_meta('meta_keywords',$blog_category->meta_keywords);
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 		 			//seo metatags
 					if( function_exists('add_meta') ){
 						set_meta_title($blog_category->meta_title);
 						set_meta_description(strip_tags($blog_category->meta_description));
 						set_meta_keywords($blog_category->meta_keywords);
 					}
+<<<<<<< HEAD
 					$blog_category->cover = 'files/blog/'. $blog_category->img ;
 					$sub_category = $BlogControllers->blogCategory($blog_category->id);
 					$result = $BlogControllers->getBlogByCat($blog_category->id);
+=======
+	 			
+					$blog_category->cover = 'files/blog/'. $blog_category->img ;
+
+					$sub_category = $BlogControllers->blogCategory($blog_category->id);
+					$result = $BlogControllers->getBlogByCat($blog_category->id);
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 					$data['blog_category'] = $blog_category;
 					$data['sub_category'] = $sub_category;
 					$data['blog_list'] = $result->blog_list;
 					$data['paginator'] = $result->paginator;
 					$data['blog_style'] = $BlogControllers->getBlogStyle();
 				}
+<<<<<<< HEAD
 			}
+=======
+				
+			}
+
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 			Theme::getTemplate('blog-category',$data);
 			break;
 		case 'blog-detail':
@@ -111,6 +212,21 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 
 	 				$data['blog'] = $blog;
 	 				$data['blog_category'] = $blog_category;
+<<<<<<< HEAD
+=======
+
+	 				/*os_initialize_meta('meta_title',$blog->meta_title);
+	 				os_initialize_meta('meta_description',$blog->meta_description);
+	 				os_initialize_meta('meta_keywords',$blog->meta_keywords);
+
+	 				os_initialize_ogdata(array(
+						"url" => "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", 
+						"title" => $blog->meta_title, 
+						"description" => $blog->meta_description, 
+						"image" => $blog->cover
+					));*/
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 					//seo metatags
 					if( function_exists('add_meta') ){
 						set_meta_title($blog->meta_title);
@@ -126,6 +242,10 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 			}
 			//get home page template
 			Theme::getTemplate('blog-detail',$data);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 626a5870a752b0b518adbcfa074dbba4e576e490
 			break;
 		case 'search':
 			$data = array();
