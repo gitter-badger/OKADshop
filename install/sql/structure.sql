@@ -628,7 +628,7 @@ CREATE TABLE IF NOT EXISTS `%%invoice_detail` (
 -- Structure de la table `languages`
 --
 
-CREATE TABLE IF NOT EXISTS `%%languages` (
+CREATE TABLE IF NOT EXISTS `%%langs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `locale` varchar(32) NOT NULL,
