@@ -35,11 +35,11 @@
 				</div>
 				<div class="form-group">
 				    <label for="phone"><?php trans_e("Phone number 1", "account"); ?> <span class="required">*</span></label>
-				    <input value="<?=(isset($user->phone)) ? $user->phone : '';?>" type="text" name="phone" class="form-control" id="phone" placeholder="<?php trans_e("Your Phone number 1...", "account"); ?>" required>
+				    <input value="<?=(isset($user->phone)) ? $user->phone : '';?>" type="number" name="phone" class="form-control" id="phone" placeholder="<?php trans_e("Your Phone number 1...", "account"); ?>" required>
 				</div>
 				<div class="form-group">
 				    <label for="mobile"><?php trans_e("Phone number 2", "account"); ?></label>
-				    <input value="<?=(isset($user->mobile)) ? $user->mobile : '';?>" type="text" name="mobile" class="form-control" id="mobile" placeholder="<?php trans_e("Your Phone number 2...", "account"); ?>">
+				    <input value="<?=(isset($user->mobile)) ? $user->mobile : '';?>" type="number" name="mobile" class="form-control" id="mobile" placeholder="<?php trans_e("Your Phone number 2...", "account"); ?>">
 				</div>
 				<div class="form-group">
 				    <label for="password"><?php trans_e("Password", "account"); ?> <span class="required">*</span></label>
