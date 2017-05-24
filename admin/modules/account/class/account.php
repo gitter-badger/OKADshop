@@ -125,7 +125,8 @@ class Account {
 				$date = new DateTime($format_date);
 				$data['birthday'] = $date->format('Y-m-d');
 				$data['password'] = md5($_POST['password']);
-				unset($data[day], $data[month], $data[year], $data[register], $data[redirect_to]);
+				$data['ip'] = $_SERVER['REMOTE_ADDR'];
+				unset($data['day'], $data['month'], $data['year'], $data['register'], $data['redirect_to']);
 				if( UserController::userExist($data['email']) ){
 					$data['message']['danger'] = trans("Email already in use, please try another.", "account");
 				} else if( UserController::register($data) ){
