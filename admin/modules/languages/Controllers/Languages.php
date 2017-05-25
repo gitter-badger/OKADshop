@@ -197,7 +197,7 @@ class Languages {
 
     public static function getByID($id_lang)
     {
-        return getDB()->find('languages', $id_lang);
+        return getDB()->find('langs', $id_lang);
     }
 
 
@@ -214,14 +214,14 @@ class Languages {
         $columns['cdate'] = $columns['udate'] = date("Y-m-d H:i:s");
 
         if( isset($columns['default_lang']) ) {
-            $db->prepare("UPDATE `{$db->prefix}languages` SET `default_lang`=0");
+            $db->prepare("UPDATE `{$db->prefix}langs` SET `default_lang`=0");
         }
 
-        $exist = $db->findByColumn('languages', 'iso_code', $columns['iso_code']);
+        $exist = $db->findByColumn('langs', 'iso_code', $columns['iso_code']);
         if( !empty($exist) ) {
             return false;
         }
-        return $db->create('languages', $columns);
+        return $db->create('langs', $columns);
     }
 
 
@@ -239,10 +239,10 @@ class Languages {
         $columns['cdate'] = $columns['udate'] = date("Y-m-d H:i:s");
 
         if( isset($columns['default_lang']) ) {
-            $db->prepare("UPDATE `{$db->prefix}languages` SET `default_lang`=0");
+            $db->prepare("UPDATE `{$db->prefix}langs` SET `default_lang`=0");
         }
 
-        return $db->update('languages', $_GET['id'], $columns);
+        return $db->update('langs', $_GET['id'], $columns);
     }
 
 

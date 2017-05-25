@@ -68,7 +68,7 @@ class Pages extends PageController {
     public function pageLangs() {
         $db = getDB();
         if( form_submited() && isset($_POST['delete_lang']) ) {
-            if( $db->delete('languages', $_POST['delete_lang']) ) {
+            if( $db->delete('langs', $_POST['delete_lang']) ) {
                 set_flash_message('success', trans('The language was deleted.', 'lang'));
             } else {
                 set_flash_message('danger', trans('Unable to delete language.', 'lang'));
@@ -77,7 +77,7 @@ class Pages extends PageController {
         self::$title = trans('Languages', 'lang');
         self::$icon = 'fa fa-globe';
         return get_view(__FILE__, 'admin/langs', [
-            'langs' => $db->all('languages')
+            'langs' => $db->all('langs')
         ]);
     }
 

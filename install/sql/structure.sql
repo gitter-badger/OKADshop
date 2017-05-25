@@ -642,7 +642,7 @@ CREATE TABLE IF NOT EXISTS `%%langs` (
   `cdate` datetime DEFAULT NULL,
   `udate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+) AUTO_INCREMENT=0;
 
 
 -- --------------------------------------------------------

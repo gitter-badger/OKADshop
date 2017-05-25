@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `{languages}` (
+CREATE TABLE IF NOT EXISTS `{langs}` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(64) NOT NULL,
   `locale` varchar(32) NOT NULL,

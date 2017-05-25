@@ -30,7 +30,7 @@ class Language
      * @return id int
      **/
     public static function getByField($field, $value){
-        $language = getDB()->findByColumn('languages', $field, $value, ['id'], true);
+        $language = getDB()->findByColumn('langs', $field, $value, ['id'], true);
         return $language->id;
     }
 
@@ -77,16 +77,16 @@ class Language
             //get user navigator language
             $iso_code = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
             if( $iso_code != '' ){
-                $language = findByColumn('languages', 'iso_code', $iso_code, array('*'), true);
+                $language = findByColumn('langs', 'iso_code', $iso_code, array('*'), true);
                 if( !$language ){
-                    $language = findByColumn('languages', 'default_lang', 1, array('*'), true);
+                    $language = findByColumn('langs', 'default_lang', 1, array('*'), true);
                 }
             }
         } else {
-            $language = $db->find('languages', $id_lang);
+            $language = $db->find('langs', $id_lang);
         }
         //set random language
-        if( !$language ) $language = $db->select('languages', ['*'], true);
+        if( !$language ) $language = $db->select('langs', ['*'], true);
         unset($language->active, $language->default_lang, $language->cby, $language->uby, $language->cdate, $language->udate);
         $language->direction = ($language->direction=='0') ? 'ltr' : 'rtl';
         create_session('language', $language);
@@ -101,7 +101,7 @@ class Language
      * @return langueges object
      **/
     public static function getLanguages(){
-        return getDB()->findByColumn('languages', 'active', 1);
+        return getDB()->findByColumn('langs', 'active', 1);
     }
 
 
@@ -112,7 +112,7 @@ class Language
      * @return data object
      **/
     public static function getDefaultLanguage(){
-        $default = getDB()->findByColumn('languages', 'default_lang', 1, ['id'], true);
+        $default = getDB()->findByColumn('langs', 'default_lang', 1, ['id'], true);
         return $default->id;
     }
 
