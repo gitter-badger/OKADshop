@@ -71,16 +71,16 @@ function get_theme_url($path=''){
 
 
 /**
- * Get theme icon
+ * Get theme preview picture
  *
  * @param $name string
  */
 function get_theme_icon($name){
-	$path = 'themes/'. $name .'/icon.png';
+	$path = 'themes/'. $name .'/preview.png';
 	if( file_exists( site_base() . $path ) ){
 		return site_url() . $path;
 	}
-	return site_url() .'assets/img/icons/icon.png';
+	return site_url() .'assets/img/icons/preview.png';
 }
 
 
