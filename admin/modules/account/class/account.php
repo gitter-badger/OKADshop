@@ -104,7 +104,7 @@ class Account {
 
 	/**
      * Register new User
-     *
+     * dont forget to enforce security to this form
      * @return void
      */
 	public function register() {

@@ -8,10 +8,6 @@
             eraseCookie('nl_dont_show_again');
         }
     });
-
-    var test_trans = trans('Test JS trans', 'nl');
-
-
 })(jQuery);
 
 

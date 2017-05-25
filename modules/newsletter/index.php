@@ -49,7 +49,9 @@ function newsletter_install() {
 
 
 function newsletter_before_footer(){
+	
 	return get_view(__FILE__, 'front/nl-block');
+	
 }
 add_hook(__FILE__, 'before_footer', 'newsletter_before_footer', 'Block newsletter', 'Display newsletter block before footer section.');
 

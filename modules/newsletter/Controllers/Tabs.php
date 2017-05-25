@@ -54,23 +54,27 @@ class Tabs {
 			$options = array_replace_recursive($this->options, $_POST);
 			if( isset($_FILES['bg_image']) && $_FILES['bg_image']['size'] > 0 ){
 				// Check if image feet required dementions
-				$image = getimagesize($_FILES["bg_image"]["tmp_name"]);
-				$image_width = $image[0];
-				$image_height = $image[1];
-				if( $image_width < 770 || $image_height < 440 ) {
-					$upload_error = true;
-					set_flash_message('danger', trans('Image dimensions should be 770x440.', 'nl'));
-				} else {
-					// Upload image
-	                $upload = upload_medias($_FILES['bg_image'], array(
-	                    'title' => 'bg_image',
-	                    'extensions' => array('jpg', 'png'),
-	                    'uploadDir' => 'uploads/modules/newsletter/'
-	                ));
-	                if( isset($upload['files']) ){
-	                    $options['bg_image'] = 'uploads/modules/newsletter/' . $upload['files'][0];
-	                }
+				if(file_exists($_FILES["bg_image"]['tmp_name']))
+				{
+					$image = getimagesize($_FILES["bg_image"]["tmp_name"]);
+					$image_width = $image[0];
+					$image_height = $image[1];
+					if( $image_width < 770 || $image_height < 440 ) {
+						$upload_error = true;
+						set_flash_message('danger', trans('Image dimensions should be 770x440.', 'nl'));
+					} else {
+						// Upload image
+		                $upload = upload_medias($_FILES['bg_image'], array(
+		                    'title' => 'bg_image',
+		                    'extensions' => array('jpg', 'png'),
+		                    'uploadDir' => 'uploads/modules/newsletter/'
+		                ));
+		                if( isset($upload['files']) ){
+		                    $options['bg_image'] = 'uploads/modules/newsletter/' . $upload['files'][0];
+		                }
+					}
 				}
+
             }
 
             if( ! $upload_error ) {
