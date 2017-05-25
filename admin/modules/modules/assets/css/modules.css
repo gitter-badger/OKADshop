@@ -181,13 +181,12 @@
 
 /* payment_methodes */
 #payment_methodes{
-    margin-top: 7px;
+    margin-top: 2px;
 }
 
 #payment_methodes li{
     display: inline;
     text-align: center;
     margin-left: 5px;
-    cursor: help;
-    color: #fff;
+    color: #424242;
 }

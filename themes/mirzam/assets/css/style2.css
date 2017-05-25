@@ -1127,18 +1127,22 @@ footer .widgets .social-icons li a i{
 
 footer .footer-bottom {
 	background-color: #b5b5b5;
+	height: 51px !important;
 }
 
 footer .footer-bottom p{
+    /*
     font-size: 24px;
     color: #f0f0e9;
     line-height: 70px;
     margin-bottom: 0px;
     text-align: center;
+    */
+    color:#424242 !important;
 }
 footer .footer-bottom a {
 	font-weight: bold;
-    color: rgba(0,0,0,.4); 
+    color: #5d5d5d !important;
 }
 footer .footer-bottom a:hover {
     color: white; 

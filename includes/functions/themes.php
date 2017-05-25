@@ -71,7 +71,7 @@ function get_theme_url($path=''){
 
 
 /**
- * Get theme preview picture
+ * Get theme preview image
  *
  * @param $name string
  */
