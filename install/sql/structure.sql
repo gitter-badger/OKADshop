@@ -630,6 +630,7 @@ CREATE TABLE IF NOT EXISTS `%%invoice_detail` (
 
 CREATE TABLE IF NOT EXISTS `%%langs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(10) DEFAULT NULL,
   `name` varchar(64) NOT NULL,
   `locale` varchar(32) NOT NULL,
   `iso_code` varchar(32) NOT NULL,

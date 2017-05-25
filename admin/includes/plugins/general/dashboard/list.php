@@ -215,7 +215,7 @@ if( $total > 0 ){
   						<div class="col-xs-4 col-sm-2">
   							<div class="panel panel-default">
   							  <div class="panel-body">
-  							    <label><?=l("Produits", "core");?></label>
+  							    <label><?=l("Products", "core");?></label>
   							  	<p class="value"><?php echo $total_products; ?></p>
   							    <p class="icon"><i class="fa fa-server fa-3x"></i></p>
   							  </div>
@@ -224,7 +224,7 @@ if( $total > 0 ){
   						<div class="col-xs-4 col-sm-2">
   							<div class="panel panel-default">
   							  <div class="panel-body">
-  							  	<label><?=l("Clients", "core");?></label>
+  							  	<label><?=l("Customers", "core");?></label>
   							  	<p class="value"><?php echo $total_customers; ?></p>
   							    <p class="icon"><i class="fa fa-address-book-o fa-3x"></i></p>
   							  </div>
@@ -233,7 +233,7 @@ if( $total > 0 ){
               <div class="col-xs-4 col-sm-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <label><?=l("Devis", "core");?></label>
+                    <label><?=l("Quotations", "core");?></label>
                     <p class="value"><?php echo $total_quotes; ?></p>
                     <p class="icon"><i class="fa fa fa-files-o fa-3x"></i></p>
                   </div>
@@ -242,7 +242,7 @@ if( $total > 0 ){
               <div class="col-xs-4 col-sm-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <label><?=l("Commandes", "core");?></label>
+                    <label><?=l("Orders", "core");?></label>
                     <p class="value"><?php echo $total_orders; ?></p>
                     <p class="icon"><i class="fa fa-list-alt fa-3x"></i></p>
                   </div>
@@ -251,7 +251,7 @@ if( $total > 0 ){
               <div class="col-xs-4 col-sm-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <label><?=l("Factures", "core");?></label>
+                    <label><?=l("Invoices", "core");?></label>
                     <p class="value"><?php echo $total_invoice; ?></p>
                     <p class="icon"><i class="fa fa-file-text fa-3x"></i></p>
                   </div>
@@ -260,7 +260,7 @@ if( $total > 0 ){
               <div class="col-xs-4 col-sm-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <label><?=l("Transporteurs", "core");?></label>
+                    <label><?=l("Shipping", "core");?></label>
                     <p class="value"><?php echo $total_carriers; ?></p>
                     <p class="icon"><i class="fa fa fa-truck fa-3x"></i></p>
                   </div>

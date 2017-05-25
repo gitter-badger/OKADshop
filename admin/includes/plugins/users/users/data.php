@@ -321,7 +321,7 @@ use Core\i18n\Language;
 
 //check if user is admin
 $is_admin = (!empty($customer) && $customer['user_type'] == "admin" ) ? true : false;
-$user_label = ($is_admin) ? "Employés" : "Client";
+$user_label = ($is_admin) ? "Employee" : "Customer";
 ?>
 
 <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
@@ -380,7 +380,7 @@ $user_label = ($is_admin) ? "Employés" : "Client";
         <?=l("Information ".$user_label, "core");?>
         <span class="badge"><?=(isset($order_count[0]['count'])) ? $order_count[0]['count'] : ''; ?> <?=l("Commandes", "core");?></span>
       <?php else : ?>
-        Employés
+        Employees
       <?php endif; ?>
         <a data-toggle="collapse" href="#customer_collapse" class="btn btn-primary pull-right"><i class="fa fa-minus"></i></a>
       </div>
@@ -759,7 +759,7 @@ $user_label = ($is_admin) ? "Employés" : "Client";
         </div>
         <div id="note_collapse" class="panel-collapse collapse">
         <div class="panel-body">
-          <div class="alert alert-info"><?=l("Cette note sera affichée pour tous les employés, mais pas au client.", "core");?></div>
+          <div class="alert alert-info"><?=l("Display all employees.", "core");?></div>
           <div class="form-group">
             <div class="col-md-12 left0">
               <textarea id="note_content" rows="4" name="customer[note_content]" type="text" class="form-control"><?=(isset($customer['note_content'])) ? $customer['note_content'] : '';?></textarea>
