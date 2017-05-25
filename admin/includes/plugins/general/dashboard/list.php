@@ -206,8 +206,8 @@ if( $total > 0 ){
   	<div class="col-sm-12 padding0">
   		<div class="center-block">
   			<div class="jumbotron">
-  			  <h2><?=l("Bonjour", "core");?>, <?php echo $user_info->first_name. " ". $user_info->last_name; ?>.</h2>
-  			  <p><?=l("Voici ce qui se passe avec votre magasin dès maintenant.", "core");?></p>
+  			  <h2><?=l("Welcome", "core");?> <?php echo $user_info->first_name. " ". $user_info->last_name; ?>,</h2>
+  			  <p><?=l("This is the last statistics of your shop sales", "core");?></p>
   			</div>
   			<div class="home-blocks">
   				<div class="home-block1">
