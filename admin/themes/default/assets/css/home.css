@@ -71,11 +71,11 @@
   clear: both;
 }
 .home-blocks .home-block1 i{float: right;}
-.home-blocks .home-block1 i.fa-shopping-basket{color: #1ABD93;}
-.home-blocks .home-block1 i.fa-users{color: #A867E8;}
-.home-blocks .home-block1 i.fa-credit-card{color: #F05050;}
+.home-blocks .home-block1 i.fa-server{color: #1ABD93;}
+.home-blocks .home-block1 i.fa-address-book-o{color: #A867E8;}
+.home-blocks .home-block1 i.fa-file-text{color: #F05050;}
 .home-blocks .home-block1 i.fa-truck{color: #23b7e5;}
-.home-blocks .home-block1 i.fa-pencil-square-o{color: #27C24C;}
+.home-blocks .home-block1 i.fa-files-o{color: #27C24C;}
 .home-blocks .home-block1 i.fa-list-alt{color: #7266ba;}
 /*block2*/
 .home-blocks .home-block2 p {padding: 0px 20px;margin: 0;font-size: 15px;}

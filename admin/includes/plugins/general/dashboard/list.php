@@ -219,7 +219,7 @@ if( $total > 0 ){
   							  <div class="panel-body">
   							    <label><?=l("Produits", "core");?></label>
   							  	<p class="value"><?php echo $total_products; ?></p>
-  							    <p class="icon"><i class="fa fa-shopping-basket fa-3x"></i></p>
+  							    <p class="icon"><i class="fa fa-server fa-3x"></i></p>
   							  </div>
   							</div>
   						</div>
@@ -228,7 +228,7 @@ if( $total > 0 ){
   							  <div class="panel-body">
   							  	<label><?=l("Clients", "core");?></label>
   							  	<p class="value"><?php echo $total_customers; ?></p>
-  							    <p class="icon"><i class="fa fa-users fa-3x"></i></p>
+  							    <p class="icon"><i class="fa fa-address-book-o fa-3x"></i></p>
   							  </div>
   							</div>
   						</div>
@@ -237,7 +237,7 @@ if( $total > 0 ){
                   <div class="panel-body">
                     <label><?=l("Devis", "core");?></label>
                     <p class="value"><?php echo $total_quotes; ?></p>
-                    <p class="icon"><i class="fa fa fa-pencil-square-o fa-3x"></i></p>
+                    <p class="icon"><i class="fa fa fa-files-o fa-3x"></i></p>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ if( $total > 0 ){
                   <div class="panel-body">
                     <label><?=l("Commandes", "core");?></label>
                     <p class="value"><?php echo $total_orders; ?></p>
-                    <p class="icon"><i class="fa fa-credit-card fa-3x"></i></p>
+                    <p class="icon"><i class="fa fa-list-alt fa-3x"></i></p>
                   </div>
                 </div>
               </div>
@@ -255,7 +255,7 @@ if( $total > 0 ){
                   <div class="panel-body">
                     <label><?=l("Factures", "core");?></label>
                     <p class="value"><?php echo $total_invoice; ?></p>
-                    <p class="icon"><i class="fa fa-list-alt fa-3x"></i></p>
+                    <p class="icon"><i class="fa fa-file-text fa-3x"></i></p>
                   </div>
                 </div>
               </div>
