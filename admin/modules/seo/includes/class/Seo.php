@@ -112,12 +112,25 @@ class Seo {
 		// self::$settings = get_seo_settings(); //Get settings
 		self::$separator = self::$settings['general']['title']['separator'];
 		self::$url = get_current_url();
-		$geoPosition = $shop->latitude .', '. $shop->longitude;
-
-		if( empty(self::$pageName) ) self::$pageName = $shop->name;
+		if(isset($shop->latitude) && isset($shop->longitude))
+		{
+			$geoPosition = $shop->latitude .', '. $shop->longitude;	
+		}else{
+			$geoPosition = '0,0';
+		}
+		
+		if(isset($shop->name))
+		{
+			if( empty(self::$pageName) ) self::$pageName = $shop->name;
+		}
+		
 		if( empty(self::$title) ){
 			if( is_home() ) {
-				self::$title = $shop->tagline;
+				if(isset($shop->tagline))
+				{
+					self::$title = $shop->tagline;	
+				}
+				
 			} else if( isset($_GET['Module']) ){
 				self::$title = ucfirst($_GET['Module']);
 				if( isset($_GET['ID']) ) {
@@ -125,7 +138,11 @@ class Seo {
 				}
 			}
 		}
-		if( empty(self::$description) ) self::$description = $shop->meta_description;
+		if(isset($shop->meta_description))
+		{
+			if( empty(self::$description) ) self::$description = $shop->meta_description;	
+		}
+		
 		// if( empty(self::$keywords) && !is_home() ) self::$keywords = $shop->meta_keywords;
 		// $keywords = self::$settings['general']['keywords'];
 		// if( $keywords!='' ) self::$keywords = $keywords;
@@ -142,12 +159,18 @@ class Seo {
 	    self::$metas['robots']['content'] = self::$settings['general']['misc']['robots'];
 	    $canonical = self::$settings['general']['misc']['canonical'];
 	    self::$metas['canonical']['content'] = ( $canonical == '1' ) ? site_url() : '';
-	   
 	    self::$metas['description']['content'] = $description;
 	    $keywords = self::$settings['general']['keywords'];
 	    $keywords = (is_array($keywords)) ? implode(', ', $keywords) : $keywords;
-	    $keywords = ( $keywords != '' ) ? $keywords : self::$keywords;
-		if( is_home() ) $keywords = $shop->meta_keywords;
+	    if(isset(self::$keywords))
+	    {
+	    	$keywords = ( $keywords != '' ) ? $keywords : self::$keywords;	
+	    }
+	    if(isset($shop->meta_keywords))
+	    {
+	    	if( is_home() ) $keywords = $shop->meta_keywords;	
+	    }
+		
 	    self::$metas['keywords']['content'] = $keywords;
 
 	    self::$metas['DC.Title.Alternative']['content'] = $title;

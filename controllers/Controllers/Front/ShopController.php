@@ -65,7 +65,10 @@ class ShopController extends FrontController
         //get shop data from db and store it in session
         $shop_data = self::getData();
         if( $shop_data && !is_null($key) ){
-            return $shop_data->$key;
+            if(isset($shop_data->$key))
+            {
+                return $shop_data->$key;    
+            }
         } else {
             return $shop_data;
         }
