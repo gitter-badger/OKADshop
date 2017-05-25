@@ -166,17 +166,15 @@ if( $total > 0 ){
   letter-spacing: 2px;
 }
 
-#admin-home .center-block .jumbotron {
-  height: 250px;
-}
-
 .jumbotron h2{
-  color: rebeccapurple;
+  color: #fff;
+  font-weight: bold;
   margin:0px;
 }
     
 .jumbotron p {
-  color: #1ABD93;
+  color: #ffffff;
+  font-size: 15px;
 }
 
 
@@ -287,7 +285,7 @@ if( $total > 0 ){
       <div class="col-sm-12">
         <div id="dashaddons">
           <a href="?module=modules&page=positions">
-            <i class="fa fa-plus"></i> <?=l("Ajoutez des modules à votre tableau de bord", "core");?>
+            <i class="fa fa-plus"></i> <?=l("Add dashboard widgets", "core");?>
           </a>
         </div>
       </div>
@@ -295,19 +293,19 @@ if( $total > 0 ){
     <div class="col-sm-3">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <i class="fa fa-rss"></i> <?=l("ACTUALITÉS OKADSHOP", "core");?></div>
+          <i class="fa fa-rss"></i> <?=l("What's new", "core");?></div>
         <div class="panel-body">
           <div id="os_news"></div>
-          <center><a href="#" class="btn more_news"><?=l("Trouver plus d'actualités", "core");?></a></center>
+          <center><a href="http://okadshop.com/" target="_blank" class="btn more_news"><?=l("check our updates", "core");?></a></center>
         </div>
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <i class="fa fa-refresh"></i> <?=l("MISES À JOUR", "core");?></div>
+          <i class="fa fa-refresh"></i> <?=l("New version", "core");?></div>
         <div class="panel-body">
           <center>
-            <p><?=l("Vous pouvez mettre à jour OkadShop", "core");?> <span class="os_version"><?=_OS_VERSION_;?></span></p>
-            <a href="?module=modules&slug=os-updates&page=update-core" class="btn btn-default" style="margin-top: -4px;"><?=l("Mettre à jour", "core");?></a>
+            <p><?=l("Update OKADshop to new version", "core");?> <span class="os_version"><?=_OS_VERSION_;?></span></p>
+            <a href="?module=modules&slug=os-updates&page=update-core" class="btn btn-default" style="margin-top: -4px;text-transform: uppercase;"><?=l("update", "core");?></a>
           </center>
         </div>
       </div>
