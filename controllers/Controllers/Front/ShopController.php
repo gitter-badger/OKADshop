@@ -54,13 +54,16 @@ class ShopController extends FrontController
                     return $shop_data;
                 }
             }
-            return true;
         }else{
             $db = getDB();
-            $shop_data =  $db->prepare("SELECT * FROM `{$db->prefix}shop`");
-            
-           
-            return $shop_data[0];
+            $shop_data = get_trans('shop', 'shop_trans', 'id_shop', null, 1, true);
+            // $shop_data = Database::getInstance()->select('shop', array('*'), true);
+            if( $shop_data ){
+                unset($shop_data->cdate, $shop_data->udate);
+                if( Session::set('shop', $shop_data) ){
+                    return $shop_data;
+                }
+            }
         }
     }
 

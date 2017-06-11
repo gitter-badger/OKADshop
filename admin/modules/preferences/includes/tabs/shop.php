@@ -52,8 +52,7 @@ add_tabs(__FILE__, 'shop', $shop_tabs);
  * Shop details
  */
 function pref_details_tab(){
-	$id_lang = read_cookie('shop_lang');
-	if(!$id_lang) $id_lang = get_lang('id');
+	$id_lang = get_lang('id');
 	$db = getDB();
 	//save details
 	if ( isset($_POST['details_form']) && !is_ajax() ){

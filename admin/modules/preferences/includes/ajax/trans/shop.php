@@ -18,10 +18,11 @@ include '../../../../../../config/bootstrap.php';
 //This is an ajax request
 if(!is_ajax())
 {
-	die();
+	die('Ajax not set');
 }
 
 $id_lang = intval($_POST['id_lang']);
+
 if( $id_lang < 1 ) return false;
 
 $trans = get_trans('shop', 'shop_trans', 'id_shop', null, $id_lang, true);

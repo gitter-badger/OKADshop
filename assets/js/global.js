@@ -341,27 +341,23 @@ function ajax_form(form_id, handle_data){
  **/
 function ajax_handler(ajax_url, ajax_data={}, ajax_type, handle_data){
     // Fire off the request to request_url
-    request = $.ajax({
+    $.ajax({
         url: ajax_url,
         type: ajax_type,
         data: ajax_data//JSON.stringify(ajax_data)
-    });
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
+    }).done(function (response, textStatus, jqXHR){
         try {
             //check if response is json
             handle_data( $.parseJSON(response) );
         }catch (e) {
-            var message = trans("<b><i class='fa fa-meh-o'></i> Oops! Something went wrong.</b><br><br> <i class='fa fa-terminal'></i> See the JavaScript console for technical details.<br><i class='fa fa-refresh'></i> Please reload page and try again.", "core");
+            var message = trans("<b><i class='fa fa-meh-o'></i> Oops! Something went wrong.</b><i class='fa fa-terminal'></i> See the JavaScript console for technical details.<br><i class='fa fa-refresh'></i> Please reload page and try again.", "core");
             error_message(message);
-            console.error(jqXHR.responseText);
+            console.log(jqXHR.responseText);
         }
-    });
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        var message = trans("<b><i class='fa fa-meh-o'></i> Oops! Something went wrong.</b><br><br> <i class='fa fa-terminal'></i> See the JavaScript console for technical details.<br><i class='fa fa-refresh'></i> Please reload page and try again.", "core");
+    }).fail(function (jqXHR, textStatus, errorThrown){
+        var message = trans("<b><i class='fa fa-meh-o'></i> Oops! Something went wrong.</b><i class='fa fa-terminal'></i> See the JavaScript console for technical details.<br><i class='fa fa-refresh'></i> Please reload page and try again.", "core");
         error_message(message);
-        console.error(jqXHR.responseText);// Log the error to the console
+        console.log(jqXHR.responseText);// Log the error to the console
     });
 }
 

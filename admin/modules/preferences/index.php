@@ -67,7 +67,6 @@ if( get_url_param('module') == 'preferences' ){
  */
 function pref_shop_page(){
 	$data = array();
-
 	get_view(__FILE__, 'admin/shop', $data); 
 }
 add_admin_page(__FILE__, [

@@ -125,8 +125,7 @@ function get_trans($table, $table_trans, $foreign_key, $condition=null, $id_lang
 	$db = getDB();
 	$table_parent = $db->prefix . $table;
 	$table_trans  = $db->prefix . $table_trans;
-	return $db->prepare("
-		SELECT t.*, p.* FROM `{$table_parent}` p
+	$query = "SELECT t.*, p.* FROM `{$table_parent}` p
 		LEFT JOIN `{$table_trans}` t ON t.{$foreign_key} = p.id
 		WHERE t.id_lang = CASE 
 		    WHEN EXISTS(
@@ -138,8 +137,10 @@ function get_trans($table, $table_trans, $foreign_key, $condition=null, $id_lang
 		    THEN (
 		        {$id_lang}
 		    ) 
-		    ELSE p.id_lang
-		END
+		    ELSE 
+		    	1
+			END
 		{$condition}
-	", [], $one);
+	";
+	return $db->prepare($query, [], $one);
 }
