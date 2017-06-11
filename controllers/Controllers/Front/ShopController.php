@@ -23,7 +23,7 @@ class ShopController extends FrontController
 {
 
 	/**
-     * Table int
+     * Table string
      * @var Table $table
      */
     protected $table = "shop";  
@@ -38,20 +38,30 @@ class ShopController extends FrontController
     public static function getData(){
        // Cookie::destroy('shop');
 
-        $cookie_shop = Session::get('shop');
-        if( $cookie_shop ) return $cookie_shop;
 
-        //get shop data from database
-        $id_lang = get_lang('id');
-        $shop_data = get_trans('shop', 'shop_trans', 'id_shop', null, $id_lang, true);
-        // $shop_data = Database::getInstance()->select('shop', array('*'), true);
-        if( $shop_data ){
-            unset($shop_data->cdate, $shop_data->udate);
-            if( Session::set('shop', $shop_data) ){
-                return $shop_data;
+        $cookie_shop = Session::get('shop');
+        if($cookie_shop != false)
+        {
+            if( $cookie_shop ) return $cookie_shop;
+
+            //get shop data from database
+            $id_lang = get_lang('id');
+            $shop_data = get_trans('shop', 'shop_trans', 'id_shop', null, $id_lang, true);
+            // $shop_data = Database::getInstance()->select('shop', array('*'), true);
+            if( $shop_data ){
+                unset($shop_data->cdate, $shop_data->udate);
+                if( Session::set('shop', $shop_data) ){
+                    return $shop_data;
+                }
             }
+            return true;
+        }else{
+            $db = getDB();
+            $shop_data =  $db->prepare("SELECT * FROM `{$db->prefix}shop`");
+            
+           
+            return $shop_data[0];
         }
-        return false;
     }
 
 
@@ -62,6 +72,7 @@ class ShopController extends FrontController
      * @return data object
      */
     public static function get($key=null){
+        
         //get shop data from db and store it in session
         $shop_data = self::getData();
         if( $shop_data && !is_null($key) ){

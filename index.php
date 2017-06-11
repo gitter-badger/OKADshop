@@ -33,6 +33,8 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 				$data['cms_category'] = $cms_category;
 				$data['cms_list'] = $result->cms_list;
 				$data['paginator'] = $result->paginator;
+
+
 				//get cms template
 				Theme::getTemplate('cms-category', $data);
 			}else{
@@ -58,8 +60,12 @@ if (isset($_GET['Module']) && !empty($_GET['Module'])) {
 						add_meta('og:image', $image, 'property');
 					}
 				}
+				//get category of article
+				$cms_category = $CmsController->getCmsCat($cms->id_cmscat);
+				//get related cms articles
+				$CMSRelatedArticles = $CmsController->getCmsByCat($cms->id_cmscat);
 				//get cms template
-	 			$data['cms'] = $cms;
+	 			$data['cms'] = array('CMS'=>$cms, 'CMSCAT' => $cms_category, 'CMSRelatedArticles' => $CMSRelatedArticles);
 				Theme::getTemplate('cms', $data);
 			}else{
 				//redirect to 404 page

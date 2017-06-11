@@ -29,19 +29,23 @@ include_once 'includes/tabs/shop.php';
  * Add menu links
  */
 global $os_admin_menu;
-$preferences = $os_admin_menu->add( trans('Preferences', 'pref'), get_page_url('shop', __FILE__));
-	$preferences->link->prepend('<span class="fa fa-wrench"></span>');
-	$preferences->add( trans('Shop', 'pref'), get_page_url('shop', __FILE__) );
 
-	$p_cms = $preferences->add( l("CMS", "core"), '#');
+	
+	
+
+	$p_cms = $os_admin_menu->add( l("Pages", "core"), '#');
+		$p_cms->link->prepend('<span class="fa fa-columns"></span>');
 	    $p_cms->add( l("Pages", "core"), '?module=cms');
 	    $p_cms->add( l("Catégories", "core"), '?module=cms_categories');
 
-	$p_blog = $preferences->add( l("Blog", "core"), '#');
-	    $p_blog->add( l("Articles", "core"), '?module=blog');
+	$p_blog = $os_admin_menu->add( l("Blog", "core"), '#');
+		$p_blog->link->prepend('<span class="fa fa-rss"></span>');
+	    $p_blog->add( l("Blog", "core"), '?module=blog');
 	    $p_blog->add( l("Catégories", "core"), '?module=blog_categories');
 
-	$p_modules = $preferences->add( trans("Modules", "pref"), '#' );
+
+	$preferences = $os_admin_menu->add( trans('Preferences', 'pref'), get_page_url('shop', __FILE__));
+	$preferences->link->prepend('<span class="fa fa-wrench"></span>');
 
 
 
