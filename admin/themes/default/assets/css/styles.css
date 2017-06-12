@@ -4528,3 +4528,8 @@ table#productImages input[name="default"]{
 .colorpicker.colorpicker-visible{
   z-index: 999999;
 }
+
+.shop_or_blog{
+  margin-top:7px;
+  float:left;
+}

@@ -21,21 +21,10 @@ if( !empty($waiting_customers) ) $total_waiting = $waiting_customers[0]['count']
      <a class="navbar-btn sidebar-toggle" data-toggle="offcanvas" href="#" role="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></a>
     <div class="navbar-right">
       <ul class="nav navbar-nav">
-        <!--li class="dropdown user user-menu">
-          <form action="" id="lang_list_form" method="post">
-            <select id="lang_list" name="lang_list">
-              <?php
-              /*if( !empty($os_langs) )
-              {
-                foreach ($os_langs as $key => $lang) {
-                  $selected = (isset($_SESSION['code_lang']) && $_SESSION['code_lang']==$lang['code']) ? 'selected' : '';
-                  echo '<option value="'.$lang['code'].'" '. $selected .'>'.$lang['name'].'</option>';
-                }
-              }*/
-              ?>
-            </select>
-          </form>
-        </li-->
+
+        <span class="shop_or_blog">
+          <input id="shop_or_blog" type="checkbox" data-toggle="toggle" data-size="small" data-on="Shop" data-off="Blog">
+        </span>
         <?php execute_section_hooks( 'sec_admin_bar' ); ?>
         <li>
           <a href="?module=users">

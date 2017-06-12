@@ -26,7 +26,7 @@ $hooks = new Hooks();
 /*$os_admin_menu = new Menu;
 $dashboard = $os_admin_menu->add('<i class="fa fa-dashboard"></i>'. l("Tableau de bord", "core"), './index.php');*/
 global $os_admin_menu;
-$os_orders = $os_admin_menu->add('<i class="fa fa-credit-card"></i>'. l("Commandes", "core"), '?module=orders');
+$os_orders = $os_admin_menu->add('<i class="fa fa-credit-card shop_site"></i>'. l("Commandes", "core"), '?module=orders');
 	$os_orders->add( l("Commandes", "core"), '?module=orders');
 	$os_orders->add( l("Factures", "core"), '?module=invoices');
 
@@ -36,14 +36,14 @@ $os_customers = $os_admin_menu->add('<i class="fa fa-users"></i>'. l("Clients", 
 	$os_customers->add( l("Groups", "core"), '?module=groups');
 	// $os_customers->add( l("Contacts", "core"), '?module=contacts');
 
-$os_cart_rule = $os_admin_menu->add('<i class="fa fa-tags"></i>'. l("Promotions", "core"), '?module=cart');
+$os_cart_rule = $os_admin_menu->add('<i class="fa fa-tags shop_site"></i>'. l("Promotions", "core"), '?module=cart');
 	$os_cart_rule->add( l("Règles panier", "core"), '?module=cart');
 
-$os_shipping = $os_admin_menu->add('<i class="fa fa-truck"></i>'. l("Livraison", "core"), '?module=shipping');
+$os_shipping = $os_admin_menu->add('<i class="fa fa-truck shop_site"></i>'. l("Livraison", "core"), '?module=shipping');
 	$os_shipping->add( l("Transporteurs", "core"), '?module=shipping');
 	$os_shipping->add( l("Ajouter un transport", "core"), '?module=shipping&action=add');
 
-$os_locale = $os_admin_menu->add('<i class="fa fa-globe"></i>'. l("Localisation", "core"), '?module=countries');
+$os_locale = $os_admin_menu->add('<i class="fa fa-globe shop_site"></i>'. l("Localisation", "core"), '?module=countries');
 	$os_locale->add( l("Pays", "core"), '?module=countries');
 	$os_locale->add( l("Devises", "core"), '?module=currencies');
 	$os_locale->add( l("Zones", "core"), '?module=zones');

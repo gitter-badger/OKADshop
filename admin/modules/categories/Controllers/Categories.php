@@ -45,8 +45,9 @@ class Categories {
     {
         // Add admin menu links
         global $os_admin_menu;
+
         $cats = $os_admin_menu->add( trans('Categories', 'cats'), get_page_url('cats', __FILE__));
-        $cats->link->prepend('<span class="fa fa-sitemap"></span>');
+        $cats->link->prepend('<span class="fa fa-sitemap shop_site"></span>');
 
         add_css('categories-css', [
             'src' => module_url(__FILE__, 'assets/css/categories.css'), 

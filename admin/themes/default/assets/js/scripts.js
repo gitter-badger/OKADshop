@@ -340,4 +340,3 @@ function gencode(nbr, target)
   $( target ).val(code);
 }
 
-

@@ -31,6 +31,22 @@ $(function() {
         }
     });
 
+    //enable shop or not
+    $('#shop_or_blog').change(function() {
+        if($(this).prop('checked'))
+        {
+            $('.left-side .dropdown-menu').find('.shop_site').each(function(){
+                $(this).parent().fadeIn();
+            })
+        }
+        else{
+            $('.left-side .dropdown-menu').find('.shop_site').each(function(){
+                $(this).parent().fadeOut();
+
+            })
+        }
+    })
+
     //Add hover support for touch devices
     $('.btn').bind('touchstart', function() {
         $(this).addClass('hover');

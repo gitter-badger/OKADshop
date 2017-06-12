@@ -29,7 +29,7 @@ include 'includes/class/product.php';
  */
 global $os_admin_menu;
 $catalog = $os_admin_menu->add( trans('Catalogs', 'ctg'), get_page_url('', __FILE__));
-	$catalog->link->prepend('<span class="fa fa-book"></span>');
+	$catalog->link->prepend('<span class="fa fa-book shop_site"></span>');
 	$catalog->add( trans('Products', 'ctg'), get_page_url('', __FILE__));
 	$catalog->add( trans("Product Attributes", "ctg"), '?module=attributes');
 	$catalog->add( trans("Product Values", "ctg"), '?module=values');
