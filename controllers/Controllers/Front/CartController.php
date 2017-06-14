@@ -70,7 +70,6 @@ class CartController extends FrontController
             }
             $cart->items[$id_product]['qty'] += $quantity;
         }
-
         return Session::set('cart', $cart);
 	}
 
@@ -123,14 +122,13 @@ class CartController extends FrontController
         //get cart results
         $cart_content = self::cartContent();
         if( $cart_content ) return $cart_content;
-
         //prepare vars
         $product = new ProductController();
         $results = $ids_products = array();
         $items_count = $total_products = $total_discount = $total_tax = 0;
 
         $cart = Session::get('cart');
-        // var_dump($cart->items);exit;
+        //var_dump($cart->items);exit;
 
         if( isset($cart->items) ){
             foreach ($cart->items as $id_product => $item) {
@@ -143,7 +141,8 @@ class CartController extends FrontController
                     if( isset($item['qty']) ){
                         //get translated product data
                         $data = $product->getProduct($id_product);
-                        if(is_array($data))
+                        //check if product exist and return Database
+                        if(!empty($data))
                         {
                             //prepare data
                             $product_data->id_product = $data->id;
@@ -160,8 +159,6 @@ class CartController extends FrontController
                             $product_data->attrs = [];
                             $product_data->link = $data->link;
                             $results['items'][] = $product_data;
-                        }else{
-                            echo "data retun false\n";
                         }
                         
                     } elseif( !empty($item) ) {

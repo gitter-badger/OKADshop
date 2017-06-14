@@ -48,6 +48,7 @@ if( $id_declinaison > 0 ){
 		$qty_match = false;
 	}
 }
+
 if( !$qty_match ){
 	$return['error'] = trans("Min quantity is:", "core") .' '. $min_quantity;
 } else {
@@ -57,12 +58,12 @@ if( !$qty_match ){
 	$args->id_product = $id_product;
 	$args->id_declinaison = $id_declinaison;
 	$args->qty = $qty;
-
-
 	//update cart items
 	if( $cart->addToCart($args) ){
+
 		$return['cart'] = $cart->getCartItems();
 	}
 }
+
 echo json_encode($return);
 
