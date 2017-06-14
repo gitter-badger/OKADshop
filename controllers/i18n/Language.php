@@ -86,7 +86,10 @@ class Language
             $language = $db->find('langs', $id_lang);
         }
         //set random language
-        if( !$language ) $language = $db->select('langs', ['*'], true);
+        if( empty($language) )
+        {
+            $language = $db->select('langs', ['*'], true);
+        }
         unset($language->active, $language->default_lang, $language->cby, $language->uby, $language->cdate, $language->udate);
         $language->direction = ($language->direction=='0') ? 'ltr' : 'rtl';
         create_session('language', $language);

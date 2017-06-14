@@ -38,20 +38,22 @@ class ShopController extends FrontController
     public static function getData(){
        // Cookie::destroy('shop');
 
-
         $cookie_shop = Session::get('shop');
         if($cookie_shop != false)
         {
-            if( $cookie_shop ) return $cookie_shop;
-
-            //get shop data from database
-            $id_lang = get_lang('id');
-            $shop_data = get_trans('shop', 'shop_trans', 'id_shop', null, $id_lang, true);
-            // $shop_data = Database::getInstance()->select('shop', array('*'), true);
-            if( $shop_data ){
-                unset($shop_data->cdate, $shop_data->udate);
-                if( Session::set('shop', $shop_data) ){
-                    return $shop_data;
+            if( $cookie_shop->id_lang == get_lang('id'))
+            {
+                return $cookie_shop;
+            }else{
+                //get shop data from database
+                $id_lang = get_lang('id');
+                $shop_data = get_trans('shop', 'shop_trans', 'id_shop', null, $id_lang, true);
+                // $shop_data = Database::getInstance()->select('shop', array('*'), true);
+                if( $shop_data ){
+                    unset($shop_data->cdate, $shop_data->udate);
+                    if( Session::set('shop', $shop_data) ){
+                        return $shop_data;
+                    }
                 }
             }
         }else{
