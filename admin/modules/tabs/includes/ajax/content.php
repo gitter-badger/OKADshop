@@ -18,7 +18,7 @@ include '../../../../../config/bootstrap.php';
 if( !is_ajax() ){
 	die();
 }
-
+//add security to this part of shop
 $group   = $_POST['group'];
 $active_tab = $_POST['active_tab'];
 $location   = $_POST['location'];

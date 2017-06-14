@@ -103,8 +103,10 @@ function product_informations_tab(){
 
 	//add or update product informations
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' && !is_ajax() ){
+
 		$model = new Product();
 		if( isset($_GET['id']) && is_numeric($_GET['id']) ){
+
 			$update = $model->update($_POST);
 			if( !$update ) {
 				$data['message']['danger'] = trans("Unable to update Product, please try again.", "core");

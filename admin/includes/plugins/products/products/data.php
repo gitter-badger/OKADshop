@@ -89,7 +89,7 @@ $id_lang = Language::getDefaultLanguage();
  *=============================================================
  */
 if(isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['action']) && $_GET['action'] == 'edit'){
-	$id_product = $os_product->getProductByID( $_GET['id'] );
+	$id_product = $os_product->getProductByID( (int) $_GET['id'] );
 	if(!isset($id_product) || $id_product <= 0){
 		echo '<script>window.location.href="?module=products"</script>';
 	}
@@ -107,7 +107,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['action']) && $_GET['act
  */
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 
-	
+	die('ooo');
 
 	//INSERT ASSOCIATED
 	if(isset($_POST['associated']) && $_POST['associated'] == "insert" )
@@ -189,6 +189,7 @@ echo '</pre>';
 
 		//Insert Product
 		$id_product = $os_product->save('products', $product_data);
+
 		if( $id_product ){
 			//insert or update categories
 			if(isset($_POST['product']['categories'])){

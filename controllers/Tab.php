@@ -204,6 +204,8 @@ class Tab {
 				$data['args']['ajax'] = true;
 			}
 		}
+		//var_dump($args);
+		//die();
 		//Display tab content
 		if( $tab_view_exist ) {
 			return get_view(__FILE__, 'tabs/content', $data);

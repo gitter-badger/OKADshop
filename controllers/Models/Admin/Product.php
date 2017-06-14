@@ -45,9 +45,11 @@ class Product extends Model
                 'table' => [
                     'c' => 'categories'
                 ],
+                
                 'table_trans' => [
                     'ct' => 'category_trans'
                 ],
+
                 'foreign_key' => 'id_category'
             ]
         ],
@@ -60,10 +62,12 @@ class Product extends Model
                 'id' => 'id_category',
                 'cover' => 'cat_cover'
             ],
+            
             'ct' => [
                 'name' => 'category',
                 'link_rewrite' => 'cat_link_rewrite'
             ]
+            
         ],
         'joins' => [
             [
@@ -86,24 +90,15 @@ class Product extends Model
                     'ct' => 'category_trans'
                 ],
                 'relation' => 'ct.id_category = c.id'
-            ]
+            ]   
         ],
-        // 'debug' => true
+         'debug' => false
     ];
 
 
     public function __construct()
     {
         parent::__construct();
-        // Get only active products
-        if( ! is_admin() ){
-            $this->query_args['conditions'][] = array(
-                'key' => 'p.active',
-                'value' => 1,
-                'operator' => '=',
-                'relation' => 'AND'
-            );
-        }
     }
 
 
@@ -132,7 +127,6 @@ class Product extends Model
      */
     public function getByID($id_product, $id_lang=null, $image_size='76x76'){
         if( !is_numeric($id_product) || $id_product < 1 ) return false;
-
         $this->query_args['id_lang'] = (!is_null($id_lang)) ? $id_lang : get_lang('id');
         $this->query_args['conditions'][] = array(
             'key' => 'p.id',
@@ -143,9 +137,7 @@ class Product extends Model
         $this->query_args['limit'] = 1; 
 
         $product = getDB()->trans($this->query_args);
-        
         if( is_empty($product) ) return false;
-        
         return self::setProductAssets($product, $id_lang, $image_size);
     }
 
@@ -252,6 +244,8 @@ class Product extends Model
         if( !empty($data['product']) ){
             if( empty($data['product']['active']) ) $data['product']['active'] = 0;//set active value
             $data['product']['id_lang'] = $_POST['id_lang'];
+            $data['product']['id_category_default'] = 1;
+
             $id_product = $this->db->create('products', $data['product']);
             //create translation
             if( $id_product && !empty($data['trans']) ){
@@ -286,7 +280,13 @@ class Product extends Model
         //create or update translation
         if( !empty($data['trans']) ){
             $data['trans']['id_lang'] = $id_lang;
-            $data['trans']['id_product'] = $id_product;
+            if($id_product > 0)
+            {
+                $data['trans']['id_product'] = $id_product;    
+            }else{
+                return false;
+            }
+            
             $data['trans']['udate'] = date("Y-m-d H:i:s");
             //check if translation exist
             $trans = $this->db->prepare("
@@ -308,7 +308,7 @@ class Product extends Model
         if( !empty($data['product']) ){
             if( isset($data['product']['reference']) ){
                 if( empty($data['product']['active']) ) $data['product']['active'] = 0;
-            }          
+            }
             return $this->db->update('products', $id_product, $data['product']);
         }
         return true;

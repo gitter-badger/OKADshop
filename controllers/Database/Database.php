@@ -256,7 +256,10 @@ class Database{
 			$attributes[] = $v;
 		}
 		$sql_part = implode(',', $sql_parts);
-		return self::$instance->prepare("INSERT INTO {$table_name} SET $sql_part", $attributes, true);
+		$query = "INSERT INTO {$table_name} SET $sql_part";
+		return self::$instance->prepare($query, $attributes, true);
+
+
 	}
 	
 
@@ -395,6 +398,7 @@ class Database{
             'limit' => 0,
             'debug' => false
         ];
+        //die(get_lang()->id);
         $args = array_merge($default, $args);
 
         // Append table trans joins
@@ -432,7 +436,6 @@ class Database{
 			$conditions_sql .= $v['relation'] .' '. $v['key'] .' '. $v['operator'] .'? ';
 			$attributes[] = $v['value'];
 		endforeach; endif;
-
 		// Prepare joins
 		$joins_sql = '';
 		if( !empty($args['joins']) ) : foreach ($args['joins'] as $k => $v) :
@@ -456,23 +459,26 @@ class Database{
 			$table_trans_prefix = key($v['table_trans']);
 			$foreign_key = $v['foreign_key'];
 
-			$cases_sql .= "{$relation} {$table_trans_prefix}.id_lang = CASE WHEN EXISTS(SELECT 1 FROM `{$this->prefix}{$table_trans}` AS {$table_trans_prefix} WHERE {$table_trans_prefix}.id_lang = {$id_lang} AND {$table_trans_prefix}.{$foreign_key} = {$table_prefix}.id) THEN ({$id_lang}) ELSE {$table_prefix}.id_lang END ";
-
+			$cases_sql .= "{$relation} {$table_trans_prefix}.id_lang = CASE WHEN EXISTS(SELECT 1 FROM `{$this->prefix}{$table_trans}` AS {$table_trans_prefix} WHERE {$table_trans_prefix}.id_lang = {$id_lang} AND {$table_trans_prefix}.{$foreign_key} = {$table_prefix}.id) THEN ({$id_lang}) ELSE {$table_prefix}.id_lang END ";// 
 		endforeach; endif;
 
 		$query  = "SELECT {$columns_sql} FROM `{$this->prefix}{$primary_table}` AS {$primary_table_prefix} {$joins_sql} {$cases_sql} {$conditions_sql} {$orderby} {$limit}";
-
 		// Return query string
+		//ithink this is never used & should be removed
 		if( $args['debug'] === TRUE) {
 			return $query;
 		}
-
 		// Set query limit
 		$one = false;
+		//var_dump($query);
 		if(intval($args['limit']) == 1) $one = true;
-
 		// Return query results
-		return $this->prepare($query, $attributes, $one);
+		try{
+			return $this->prepare($query, $attributes, $one);	
+		}catch (Exception $e) {
+		    echo 'Erreur : ',  $e->getMessage();
+		}
+		
 	}
 
 
