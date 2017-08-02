@@ -90,4 +90,3 @@ $theme_options_custom_style = (object)  array(
 
 
 save_meta_value("theme_options_custom_style",serialize($theme_options_custom_style));
-//remove_meta_value("theme_options_custom_style");
