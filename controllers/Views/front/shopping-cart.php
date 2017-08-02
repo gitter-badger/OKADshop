@@ -16,7 +16,7 @@
                 <?php foreach ($cart->items as $key => $item) : ?>
                     <tr class="cart_item" data-prod="<?= $item->id_product; ?>" data-dec="<?= $item->id_dec; ?>">
                         <td class="product-thumbnail" style="padding: 0px;">
-                            <a href="<?= $item->link; ?>"><img alt="" src="<?= $item->cover; ?>"></a>
+                            <a href="<?= $item->link; ?>"><img width="150px" alt="<?= $item->name; ?>" src="<?= default_product_image($item->id_product, '570x379'); ?>"></a>
                         </td>
                         <td class="product-name">
                             <a href="<?= $item->link; ?>"><?= $item->name; ?></a>
