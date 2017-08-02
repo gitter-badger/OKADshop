@@ -88,6 +88,30 @@ CREATE TABLE IF NOT EXISTS `%%blog` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `blog_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `%%blog_categories` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_lang` int(11) DEFAULT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `permalink` varchar(150) DEFAULT NULL,
+  `meta_title` varchar(255) DEFAULT NULL,
+  `meta_description` varchar(255) DEFAULT NULL,
+  `meta_keywords` text,
+  `description` varchar(500) DEFAULT NULL,
+  `keywords` text NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `parent` int(11) NOT NULL,
+  `cby` int(11) DEFAULT NULL,
+  `uby` int(11) DEFAULT NULL,
+  `cdate` datetime DEFAULT NULL,
+  `udate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `carrier`
 --
 
