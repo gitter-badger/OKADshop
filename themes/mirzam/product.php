@@ -146,8 +146,8 @@
                         <table class="table table-bordered">
                             <?php foreach ($features as $key => $feature) : ?>
                                 <tr>
-                                    <th width="100"><?= $feature->name; ?></th>
-                                    <td><?= ($feature->custom != "") ? $feature->custom : $feature->value; ?></td>
+                                    <th width="50%"><?= $feature->name; ?></th>
+                                    <td><?= (isset($feature->custom) && $feature->custom != "") ? $feature->custom : $feature->value; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
