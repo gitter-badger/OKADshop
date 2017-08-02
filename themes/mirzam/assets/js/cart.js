@@ -76,7 +76,7 @@
 	$('.quantity-minus').on('click', function(event){
 		event.preventDefault();
 		var input_qty = $(this).closest('.box-qty').find('.qty');
-		if( min_qty == undefined || input_qty.val() > min_qty ){
+		if(typeof  min_qty === 'undefined' || input_qty.val() > min_qty ){
 			var num = +input_qty.val() - 1;
 			input_qty.val(num);
 			update_product_quantity();
