@@ -61,7 +61,30 @@ CREATE TABLE IF NOT EXISTS `%%attribute_values` (
   `udate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `blog`
+--
+CREATE TABLE IF NOT EXISTS `%%blog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `cover_blog` text NOT NULL,
+  `id_category` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_lang` int(11) NOT NULL,
+  `id_blogcat` int(11) NOT NULL,
+  `tags` text NOT NULL,
+  `img_blog` varchar(255) NOT NULL,
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` text NOT NULL,
+  `meta_keywords` text NOT NULL,
+  `permalink` varchar(255) NOT NULL,
+  `cdate` datetime NOT NULL,
+  `udate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
 -- --------------------------------------------------------
 
 --
