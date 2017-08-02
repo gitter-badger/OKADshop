@@ -143,6 +143,24 @@ INSERT INTO `%%meta_value` (`name`, `value`) VALUES
 ('default_shop_theme', 'mirzam'),
 ('cart_labels', '{"add-to-cart":{"en":"Add to cart","fr":"Ajouter au panier"},"try":{"en":"Try","fr":"Essai"},"subscribe":{"en":"Subscribe","fr":"Souscrire"},"ask-quotation":{"en":"Ask quotation","fr":"Demande de devis"},"book":{"en":"Book Now","fr":"Réserver"},"buy":{"en":"Buy","fr":"Acheter"}}');
 
+--
+-- Contenu de la table `os_order_states`
+--
+
+INSERT INTO `%%order_states` (`id`, `name`, `template`, `cby`, `uby`, `cdate`, `udate`) VALUES
+(1, 'Pending', '', NULL, NULL, '2017-08-02 05:42:05', NULL),
+(2, 'Awaiting Payment', '', NULL, NULL, '2017-08-02 05:42:18', NULL),
+(3, 'Awaiting Fulfillment', '', NULL, NULL, '2017-08-02 05:42:39', NULL),
+(4, 'Awaiting Shipment', '', NULL, NULL, '2017-08-02 05:42:39', NULL),
+(5, 'Awaiting Pickup', '', NULL, NULL, '2017-08-02 05:43:01', NULL),
+(6, 'Partially Shipped', '', NULL, NULL, '2017-08-02 05:43:01', NULL),
+(7, 'Completed', '', NULL, NULL, '2017-08-02 05:43:24', NULL),
+(8, 'Shipped', '', NULL, NULL, '2017-08-02 05:43:24', NULL),
+(9, 'Cancelled', '', NULL, NULL, '2017-08-02 05:43:50', NULL),
+(10, 'Declined', '', NULL, NULL, '2017-08-02 05:43:50', NULL),
+(11, 'Refunded', '', NULL, NULL, '2017-08-02 05:44:12', NULL),
+(12, 'Disputed', '', NULL, NULL, '2017-08-02 05:44:12', NULL),
+(13, 'Verification Required', '', NULL, NULL, '2017-08-02 05:44:23', NULL);
 
 --
 -- Contenu de la table `payment_methodes`

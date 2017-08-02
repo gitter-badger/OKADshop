@@ -37,7 +37,7 @@ INSERT INTO `%%menu_item` (`id_menu`, `title`, `permalink`, `id_type`, `id_conte
 (27, 'Address', '', 6, 0, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit Ut enim ad minim veniam', '', 1, 0),
 (27, 'Phone', '', 6, 0, '<p class="phone"><strong>Phone: </strong>+1 0000 0000</p>', '', 2, 0),
 (27, 'Email', '', 6, 0, '<p class="email"><strong>E-mail :</strong> <a href="mailto:contact@okadshop.com">contact@okadshop.com</a></p>', '', 3, 0),
-(18, 'Products', '', 3, 1, '', '', 2, 0),
+(18, 'Products', '', 3, 2, '', '', 2, 0),
 (18, 'My account', '', 4, 0, '', 'account', 3, 0),
 (30, 'Some informations About shop', '', 6, 0, '<p style="text-align: justify;">Lorem ipsum dolor sit amet Excepteur, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '', 1, 0),
 (31, 'Lorem ipsum dolor sit amet', '', 4, 0, '', '#', 1, 0),

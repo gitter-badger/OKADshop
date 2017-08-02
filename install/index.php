@@ -42,6 +42,7 @@ $server_dir = explode('/', $_SERVER['REQUEST_URI']);
 unset($server_dir[0]);
 $shop_uri = implode("/", $server_dir);
 $shop_uri = "/".str_replace("install/index.php", "", $shop_uri);
+$shop_uri = str_replace("/install", "", $shop_uri);
 $domain = $_SERVER['HTTP_HOST'];
 
 ?>

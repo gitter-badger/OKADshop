@@ -350,56 +350,6 @@ CREATE TABLE IF NOT EXISTS `%%cms_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `configuration`
---
-
-/*CREATE TABLE IF NOT EXISTS `%%configuration` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `value` varchar(255) NOT NULL,
-  `more` varchar(255) NOT NULL,
-  `cdate` date NOT NULL,
-  `udate` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;*/
-
--- --------------------------------------------------------
-
---
--- Structure de la table `contact`
---
-
-/*CREATE TABLE IF NOT EXISTS `%%contact` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(128) NOT NULL,
-  `save_msg` tinyint(1) NOT NULL DEFAULT '0',
-  `cdate` datetime DEFAULT CURRENT_TIMESTAMP,
-  `udate` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;*/
-
--- --------------------------------------------------------
-
---
--- Structure de la table `contact_trans`
---
-
-/*CREATE TABLE IF NOT EXISTS `%%contact_trans` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id_contact` int(10) unsigned NOT NULL,
-  `id_lang` int(10) unsigned NOT NULL,
-  `name` varchar(32) NOT NULL,
-  `description` text,
-  `cdate` datetime DEFAULT CURRENT_TIMESTAMP,
-  `udate` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;*/
-
--- --------------------------------------------------------
-
 --
 -- Structure de la table `countries`
 --
@@ -424,25 +374,6 @@ CREATE TABLE IF NOT EXISTS `%%countries` (
   `udate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `cron_job`
---
-
-/*CREATE TABLE IF NOT EXISTS `%%cron_job` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `cron_date` date NOT NULL,
-  `cron_time` time NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '0',
-  `cdate` datetime DEFAULT CURRENT_TIMESTAMP,
-  `udate` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;*/
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `currencies`
@@ -810,6 +741,24 @@ CREATE TABLE IF NOT EXISTS `%%orders` (
   `cby` int(11) NOT NULL,
   `cdate` datetime DEFAULT CURRENT_TIMESTAMP,
   `udate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `os_order_states`
+--
+
+CREATE TABLE IF NOT EXISTS `%%order_states` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `template` varchar(62) NOT NULL,
+  `cby` int(11) DEFAULT NULL,
+  `uby` int(11) DEFAULT NULL,
+  `cdate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `udate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
 

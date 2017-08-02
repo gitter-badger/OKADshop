@@ -25,9 +25,6 @@ $shop = json_decode($_POST['shop'], true);
 $user = json_decode($_POST['user'], true);
 $database = json_decode($_POST['db'], true);
 if( empty( $shop ) || empty( $user ) || empty( $database ) ) return;
-// $dirname = str_replace("\\", "/", dirname(__DIR__));
-// $root = $_SERVER['DOCUMENT_ROOT'];
-// $physical_uri = preg_replace("!$root|install!", "", $dirname);
 if( !defined("_LIVE_SITE_") ){
     define("_LIVE_SITE_", false);
 }
@@ -47,7 +44,6 @@ define("_DB_PASS_", "'. $db['password'] .'");
 define("_DB_PREFIX_", "'. $db['prefix'] .'");
 define("_PHYSICAL_URI_", "'. $shop['uri'] .'");
 ';
-
 require '../../vendor/autoload.php';
 require '../classes/install.class.php';
 require '../languages.php';
