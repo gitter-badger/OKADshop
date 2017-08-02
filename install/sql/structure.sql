@@ -112,6 +112,35 @@ CREATE TABLE IF NOT EXISTS `%%blog_categories` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `blog_settings`
+--
+
+CREATE TABLE IF NOT EXISTS `%%blog_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL,
+  `cdate` datetime NOT NULL,
+  `udate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `blog_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `%%blog_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_product` int(11) NOT NULL,
+  `id_tag` int(11) NOT NULL,
+  `id_lang` int(11) NOT NULL,
+  `cdate` datetime NOT NULL,
+  `udate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `carrier`
 --
 
