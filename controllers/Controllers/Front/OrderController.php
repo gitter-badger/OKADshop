@@ -42,10 +42,11 @@ class OrderController extends FrontController
         if( $slug = read_session('payment_method') ){
             $method = Payment::getMethod($slug);
             $state = self::getOrderState($method->slug);
-            $id_state = ($state->id) ? $state->id : 0;
+            $id_state = isset($state->id) ? $state->id : 1;
             $payment_method = $method->name;
         } else {
-            $id_state = 0;
+            $state = self::getOrderState($method->slug);
+            $id_state = isset($state->id) ? $state->id : 1;
             $payment_method = 'Free';
         }
                     
@@ -151,7 +152,14 @@ class OrderController extends FrontController
      */
     public static function getOrderState($template){
         $db = Database::getInstance();
-        return $db->prepare("SELECT * FROM {$db->prefix}order_states WHERE template=?", [$template], true);
+        $result = $db->prepare("SELECT * FROM {$db->prefix}order_states WHERE template=?", [$template], true);
+        if(!$result)
+        {
+            $result = $db->prepare("SELECT * FROM {$db->prefix}order_states WHERE id=1");
+            return $result[0];
+        }else{
+            return $result[0];
+        }
     }
 
 
